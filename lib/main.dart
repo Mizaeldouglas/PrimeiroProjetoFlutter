@@ -35,11 +35,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   int _numeroAleatorio = 0;
+  final List _frases = [
+    'A vida e uma caixa preta nunca saberemos o seu real significado.',
+    '⁠não deveríamos temer a morte, mais sim a vida.',
+    'Faça a pessoa que você gosta se sentir especial ao invés de só mais uma.',
+    'Seja estranho. Seja aleatório. Seja quem você é. Porque você nunca sabe quem amaria a pessoa que você esconde.'
+  ];
 
   void _incrementCounter() {
     setState(() {
 
-      _numeroAleatorio = Random().nextInt(400);
+      _numeroAleatorio = Random().nextInt(4);
 
     });
   }
@@ -62,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Precione o Botão (+) para gerar uma frase: ',
             ),
             Text(
-              '$_numeroAleatorio',
+              _frases[_numeroAleatorio],
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
